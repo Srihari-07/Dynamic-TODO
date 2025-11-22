@@ -1,0 +1,189 @@
+body{
+	padding: 0;
+	margin: 0;
+	background: #FFDFB9;
+}
+* {
+  box-sizing: border-box;
+}
+.finalContainer{  /* Contains both .mainContainer as well as .inputContainer */
+	display: flex;
+	flex-direction: column;
+	gap : 6rem;
+}
+.mainContainer{
+	display: flex; 
+  	/*width: fit-content;*/
+  	/*max-width: max-content;*/
+  	width: 90vw;               /* responsive width */
+  	max-width: 500px; 
+  	margin: 0 auto;
+  	flex-direction: column;
+  	gap: 10px;
+  	text-align: center;
+}
+#mainHeading{
+	overflow-wrap: break-word;
+	color: #A4193D;	
+  	font-size: clamp(1.8rem, 3vw + 1rem, 5rem);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#taskContainer{
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+  	padding: 0;
+  	margin: 0;
+  	width: 100%;        /* VERY important → ul fills container */
+  	min-height: 20vh
+  	max-height: 70vh;    /* prevents entire page from growing too tall */
+  	overflow-y: auto;    /* scroll when too many tasks */
+  	/*overflow-y: hidden*/
+  	gap : 0.5rem;
+  	align-items: center;
+  	font-size: clamp(1rem, 2rem, 3rem);
+  	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.taskItem{
+	display: flex;
+	gap:1rem;
+	padding: 0.75rem 1rem; /* vertical | horizontal */
+	flex-wrap: wrap;
+	width: 100%;
+}
+.task-checkbox{
+	transform: scale(1.7);
+    margin-top: 1.1rem;
+    accent-color: #A4193D; /* modern browsers */
+    cursor: pointer
+}
+.task-text{
+  	color: #A4193D;
+  	flex-basis: 90%;
+  	font-weight: 600;
+}
+.task-desc{
+  	flex-basis: 100%;
+  	border-radius: 10px;
+  	border: 2px solid #A4193D;      /* your theme color */
+    background: #fff7f0;            /* soft warm background */
+    color: #A4193D;
+  	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  	outline: none;
+    resize: vertical;               /* allow vertical resize only */
+    transition: 
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+
+.task-desc:focus {
+    border-color: #d12c58;          /* slightly brighter red */
+    box-shadow: 0 0 10px rgba(164, 25, 61, 0.4);
+    transform: scale(1.01);         /* tiny zoom effect */
+}
+.task-remove{
+	border: 2px solid #A4193D;
+	border-radius: 5px;
+	font-weight: bold;
+    background-color: red;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; /* Shadows in all four directions */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.task-remove:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); 
+}
+
+.task-remove:active {
+    transform: scale(0.95);
+}
+
+.completed .task-text,
+.completed .task-desc {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: #A4193D;
+    opacity: 0.7;
+}
+
+
+.inputContainer{
+	display: flex;
+	width: 90vw;               /* responsive width */
+  	max-width: 500px; 
+  	margin: 0 auto;
+  	gap:2.5rem;
+  	justify-content: center;
+}
+#inputField{
+	transform: scale(1.2);
+    border-radius: 5px;
+    width: 13rem;
+    height: 2rem;
+    border: 2px solid #A4193D;      /* your theme color */
+    background: #fff7f0;            /* soft warm background */
+    color: #A4193D;
+  	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#addButton{
+	transform: scale(1.2);
+    border: 2px solid #A4193D;
+    background-color: #9ff150;
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    width: 4rem;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; /* Shadows in all four directions */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+#addButton:hover {
+  transform: scale(1.3);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); 
+}
+
+#addButton:active {
+    transform: scale(0.95);
+}
+
+#clearAllButton{
+	border: 2px solid #A4193D;
+	border-radius: 5px;
+	font-weight: bold;
+    background-color: red;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transform: scale(1.2);
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; /* Shadows in all four directions */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    position: fixed;
+   	top: 4rem;
+    right: 3rem;
+}
+#clearAllButton:hover {
+  transform: scale(1.4);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); 
+}
+#clearAllButton:active {
+    transform: scale(0.95);
+}
