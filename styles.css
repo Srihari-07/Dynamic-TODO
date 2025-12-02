@@ -1,7 +1,7 @@
 body{
 	padding: 0;
 	margin: 0;
-	background: #000000;
+	background: #A4193D;
 }
 * {
   box-sizing: border-box;
@@ -13,8 +13,6 @@ body{
 }
 .mainContainer{
 	display: flex; 
-  	/*width: fit-content;*/
-  	/*max-width: max-content;*/
   	width: 90vw;               /* responsive width */
   	max-width: 500px; 
   	margin: 0 auto;
@@ -24,7 +22,7 @@ body{
 }
 #mainHeading{
 	overflow-wrap: break-word;
-	color: #FFFFFF;	
+	color: #FFDFB9;
   	font-size: clamp(1.8rem, 3vw + 1rem, 5rem);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -35,28 +33,28 @@ body{
 	list-style: none;
   	padding: 0;
   	margin: 0;
-  	width: 100%;        /* VERY important → ul fills container */
+  	width: 100%;        
   	min-height: 20vh
-  	max-height: 70vh;    /* prevents entire page from growing too tall */
-  	overflow-y: auto;    /* scroll when too many tasks */
-  	/*overflow-y: hidden*/
+  	max-height: 70vh;    
+  	overflow-y: auto;   
   	gap : 0.5rem;
   	align-items: center;
   	font-size: clamp(1rem, 2rem, 3rem);
   	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #FFDFB9;
 }
 .taskItem{
 	display: flex;
 	gap:1rem;
-	padding: 0.75rem 1rem; /* vertical | horizontal */
+	padding: 0.75rem 1rem; 
 	flex-wrap: wrap;
 	width: 100%;
-	color: #FFFFFF;
+	color: #FFDFB9
 }
 .task-checkbox{
 	transform: scale(1.7);
     margin-top: 1.1rem;
-    accent-color: #A4193D; /* modern browsers */
+    accent-color: #ff0c4b; 
     cursor: pointer
 }
 .task-text{
@@ -66,13 +64,13 @@ body{
 .task-desc{
   	flex-basis: 100%;
   	border-radius: 10px;
-  	border: 2px solid #A4193D;      /* your theme color */
-    background: #fff7f0;            /* soft warm background */
-    color: #A4193D;
+  	border: 2px solid #ff0042;    
+    background: #FFDFB9;            
+    color: #000000;
+	font-weight: bold;
   	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
   	outline: none;
-    resize: vertical;               /* allow vertical resize only */
+    resize: vertical;             
     transition: 
         border-color 0.3s ease,
         box-shadow 0.3s ease,
@@ -85,7 +83,7 @@ body{
     transform: scale(1.01);         
 }
 .task-remove{
-	border: 2px solid #A4193D;
+	border: 2px solid #ff0042;
 	border-radius: 5px;
 	font-weight: bold;
     background-color: red;
@@ -131,15 +129,16 @@ body{
     border-radius: 5px;
     width: 13rem;
     height: 2rem;
-    border: 2px solid #A4193D;      
-    background: #fff7f0;            
-    color: #FFFFFF;
+    border: 2px solid #ff0042;      
+    background: #ffbcbc;            
+    color: #000000;
+    font-weight: bold;
   	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #addButton{
 	transform: scale(1.2);
-    border: 2px solid #A4193D;
-    background-color: #9ff150;
+    border: 2px solid #ff0042;
+    background-color: #ff4377;
     color: white;
     font-weight: bold;
     border-radius: 0.3rem;
@@ -161,7 +160,7 @@ body{
 }
 
 #clearAllButton{
-	border: 2px solid #A4193D;
+	border: 2px solid #ff0042;
 	border-radius: 5px;
 	font-weight: bold;
     background-color: red;
@@ -188,3 +187,4 @@ body{
     transform: scale(0.95);
 
 }
+
