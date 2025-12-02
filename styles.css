@@ -1,7 +1,7 @@
 body{
 	padding: 0;
 	margin: 0;
-	background: #FFDFB9;
+	background: #000000;
 }
 * {
   box-sizing: border-box;
@@ -24,7 +24,7 @@ body{
 }
 #mainHeading{
 	overflow-wrap: break-word;
-	color: #A4193D;	
+	color: #FFFFFF;	
   	font-size: clamp(1.8rem, 3vw + 1rem, 5rem);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -51,6 +51,7 @@ body{
 	padding: 0.75rem 1rem; /* vertical | horizontal */
 	flex-wrap: wrap;
 	width: 100%;
+	color: #FFFFFF;
 }
 .task-checkbox{
 	transform: scale(1.7);
@@ -59,7 +60,6 @@ body{
     cursor: pointer
 }
 .task-text{
-  	color: #A4193D;
   	flex-basis: 90%;
   	font-weight: 600;
 }
@@ -80,9 +80,9 @@ body{
 }
 
 .task-desc:focus {
-    border-color: #d12c58;          /* slightly brighter red */
+    border-color: #d12c58;          
     box-shadow: 0 0 10px rgba(164, 25, 61, 0.4);
-    transform: scale(1.01);         /* tiny zoom effect */
+    transform: scale(1.01);         
 }
 .task-remove{
 	border: 2px solid #A4193D;
@@ -96,7 +96,7 @@ body{
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
-    1px 1px 0 #000; /* Shadows in all four directions */
+    1px 1px 0 #000; 
 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
@@ -131,9 +131,9 @@ body{
     border-radius: 5px;
     width: 13rem;
     height: 2rem;
-    border: 2px solid #A4193D;      /* your theme color */
-    background: #fff7f0;            /* soft warm background */
-    color: #A4193D;
+    border: 2px solid #A4193D;      
+    background: #fff7f0;            
+    color: #FFFFFF;
   	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #addButton{
@@ -186,4 +186,5 @@ body{
 }
 #clearAllButton:active {
     transform: scale(0.95);
+
 }
