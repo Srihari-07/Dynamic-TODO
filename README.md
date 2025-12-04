@@ -14,16 +14,16 @@ Click here to try the app 👉 (https://srihari-07.github.io/Dynamic-TODO/)
 
 
 
-## ✨ Features : 
-- ➕ Add new tasks instantly
-- ✏️ Add it's Description
-- ✅ Mark tasks when completed
-- ❌ Delete tasks after completion
+## Features : 
+- Add new tasks instantly
+- Add it's Description
+- Mark tasks when completed
+- Delete tasks after completion
 - Delete all the tasks if needed.
-- 💾 Saves tasks in browser local storage (persistent even after refresh)
+- Saves tasks in browser local storage (persistent even after refresh)
 
 
-## 🛠 Tech Stack :
+## Tech Stack :
 - **HTML5** -> Structure
 - **CSS3** -> Styling
 - **JavaScript (ES6)** —> Logic & Interactivity
@@ -31,7 +31,7 @@ Click here to try the app 👉 (https://srihari-07.github.io/Dynamic-TODO/)
 
 
 
-## 📚 What I Learned :
+## What I Learned :
 While building this project, I learned:
 - How to manipulate the DOM dynamically with JavaScript
 - How to approach bugs and solve them
