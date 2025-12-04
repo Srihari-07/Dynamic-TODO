@@ -1,7 +1,7 @@
 body{
 	padding: 0;
 	margin: 0;
-	background: #A4193D;
+	background: #242424;
 }
 * {
   box-sizing: border-box;
@@ -22,8 +22,8 @@ body{
 }
 #mainHeading{
 	overflow-wrap: break-word;
-	color: #FFDFB9;
-  	font-size: clamp(1.8rem, 3vw + 1rem, 5rem);
+	color: white;
+  font-size: clamp(1.8rem, 3vw + 1rem, 5rem);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -41,7 +41,7 @@ body{
   	align-items: center;
   	font-size: clamp(1rem, 2rem, 3rem);
   	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	color: #FFDFB9;
+	  color: #a38080;
 }
 .taskItem{
 	display: flex;
@@ -49,7 +49,7 @@ body{
 	padding: 0.75rem 1rem; 
 	flex-wrap: wrap;
 	width: 100%;
-	color: #FFDFB9
+	color: #ffffff;
 }
 .task-checkbox{
 	transform: scale(1.7);
@@ -64,8 +64,8 @@ body{
 .task-desc{
   	flex-basis: 100%;
   	border-radius: 10px;
-  	border: 2px solid #ff0042;    
-    background: #FFDFB9;            
+  	border: 2px solid #fff6f8;    
+    background: #d1cbc3;            
     color: #000000;
 	font-weight: bold;
   	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -129,16 +129,16 @@ body{
     border-radius: 5px;
     width: 13rem;
     height: 2rem;
-    border: 2px solid #ff0042;      
-    background: #ffbcbc;            
+    border: 2px solid #fff6f8;      
+    background: #b1adad;            
     color: #000000;
     font-weight: bold;
   	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #addButton{
 	transform: scale(1.2);
-    border: 2px solid #ff0042;
-    background-color: #ff4377;
+    border: 1px solid #fff6f8;
+    background-color: #54ad37;
     color: white;
     font-weight: bold;
     border-radius: 0.3rem;
