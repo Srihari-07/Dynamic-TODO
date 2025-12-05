@@ -13,7 +13,8 @@ const taskInput = document.getElementById("inputField");
 const addBtn = document.getElementById("addButton");
 const taskList = document.getElementById("taskContainer"); // <ul> or <ol>
 const clearAllBtn = document.getElementById("clearAllButton"); // optional
-
+const notificationBanner = document.getElementById("notificationBanner");
+const progressBar = notificationBanner.querySelector(".progress-bar");
 // ---------------------------
 // UTIL
 // ---------------------------
@@ -38,17 +39,39 @@ function loadFromStorage() { // loading the already stored tasks if any.
   }
 }
 
-function saveToStorageDebounced() {
+function saveToStorageDebounced(message) {
   if (saveTimer) clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       // optionally show a small UI toast: "Saved"
+      showNotification(message, 1500);
     } catch (err) {
       console.error("Failed to save tasks:", err);
     }
   }, SAVE_DEBOUNCE_MS);
 }
+
+function showNotification(message, duration) {
+    const text = notificationBanner.querySelector('p');
+    text.textContent = message;
+    // Reset any previous state
+    notificationBanner.classList.remove("hidden");
+    notificationBanner.classList.add("show");
+
+    progressBar.style.animation = "none";
+    void progressBar.offsetWidth; // Force reflow to restart animation
+    progressBar.style.animation = `progressAnimation ${duration}ms linear forwards`;
+  
+    // Hiding after duration (Logic to show the Animation of the notification pop up)
+    setTimeout(() => {
+      notificationBanner.classList.remove("show");
+      setTimeout(() => {
+        notificationBanner.classList.add("hidden");
+      }, 2000); 
+    }, duration);
+     
+  }
 
 // ---------------------------
 // RENDER (always from state)
@@ -124,7 +147,7 @@ function addTask(text) {
 
   state.unshift(t); // newest at top
   render();
-  saveToStorageDebounced();
+  saveToStorageDebounced("Task Added");
 }
 
 function updateTask(id, patch = {}) {
@@ -132,19 +155,19 @@ function updateTask(id, patch = {}) {
   if (idx === -1) return;
   state[idx] = { ...state[idx], ...patch, updatedAt: now() };
   render();
-  saveToStorageDebounced();
+  saveToStorageDebounced("Task Updated");
 }
 
 function removeTask(id) {
   state = state.filter(t => t.id !== id);
   render();
-  saveToStorageDebounced();
+  saveToStorageDebounced("Task Removed");
 }
 
 function clearAllTasks() {
   state = [];
   render();
-  saveToStorageDebounced();
+  saveToStorageDebounced("Saved");
 }
 
 // ---------------------------
