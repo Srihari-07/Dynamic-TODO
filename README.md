@@ -20,6 +20,7 @@ Click here to try the app 👉 (https://srihari-07.github.io/Dynamic-TODO/)
 - Mark tasks when completed
 - Delete tasks after completion
 - Delete all the tasks if needed.
+- Notification Indicator when Tasks are added or updated.
 - Saves tasks in browser local storage (persistent even after refresh)
 
 
