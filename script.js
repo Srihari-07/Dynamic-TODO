@@ -44,7 +44,6 @@ function saveToStorageDebounced(message) {
   saveTimer = setTimeout(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      // optionally show a small UI toast: "Saved"
       showNotification(message, 1500);
     } catch (err) {
       console.error("Failed to save tasks:", err);
@@ -52,6 +51,9 @@ function saveToStorageDebounced(message) {
   }, SAVE_DEBOUNCE_MS);
 }
 
+// ---------------------------
+// Shows Notification Indicator
+// ---------------------------
 function showNotification(message, duration) {
     const text = notificationBanner.querySelector('p');
     text.textContent = message;
@@ -246,3 +248,4 @@ function init() {
   render();
 }
 init();
+
